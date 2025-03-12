@@ -27,4 +27,23 @@ function nextContent(next,name,love) {
     // love.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-export { randomChange,openBook,nextContent };
+function createRoses() {
+    const roseEmojis = ['🌹', '🌸', '💮','🌷','🌺','💐','❀'];
+    const numberOfRoses = 20;
+
+    for (let i = 0; i < numberOfRoses; i++) {
+        const rose = document.createElement('div');
+        rose.className = 'rose';
+        rose.textContent = roseEmojis[Math.floor(Math.random() * roseEmojis.length)];
+        rose.style.left = Math.random() * 100 + 'vw';
+        rose.style.animationDelay = Math.random() * 5 + 's';
+        rose.style.fontSize = Math.random() * 20 + 10 + 'px';
+        document.body.appendChild(rose);
+    }
+}
+
+function playAudio(tune) {
+
+}
+
+export { randomChange,openBook,nextContent,createRoses };
